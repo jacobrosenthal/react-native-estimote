@@ -1,0 +1,10 @@
+{
+  "name": "react-native-estimote",
+  "version": "0.0.1",
+  "keywords": "react-native",
+  "dependencies": {
+    "react-native": "^0.4.0"
+  },
+  "keywords": ["react-native", "react-component", "ios", "ibeacon", "beacon", "estimote"],
+  "main": "RNEstimote.ios.js"
+}
