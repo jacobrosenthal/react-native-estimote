@@ -39,19 +39,19 @@ RCT_EXPORT_MODULE()
 
 #pragma mark Exposed React Functions - Simulation
 
-RCT_EXPORT_METHOD(addNearableToSimulation:(NSString *)identifier type:(ESTNearableType)type zone:(ESTNearableZone)zone rssi:(NSInteger)rssi)
+RCT_EXPORT_METHOD(addNearableToSimulation:(NSString *)identifier type:(NSInteger)type zone:(NSInteger)zone rssi:(NSInteger)rssi)
 {
 #if TARGET_IPHONE_SIMULATOR
-    RCTLogInfo(@"addNearableToSimulation %@ %@ %@ %ld", identifier, [self nameForNearableType:type], [self nameForNearableZone:zone], (long)rssi);
-    [self.nearableManager addNearableToSimulation:identifier withType:type zone:zone rssi: rssi];
+    RCTLogInfo(@"addNearableToSimulation %@ %@ %@ %ld", identifier, [self nameForNearableType:(ESTNearableType)type], [self nameForNearableZone:zone], (long)rssi);
+    [self.nearableManager addNearableToSimulation:identifier withType:(ESTNearableType)type zone:(ESTNearableZone)zone rssi: rssi];
 #endif
 }
 
-RCT_EXPORT_METHOD(simulateZoneForNearable:(NSString *)identifier zone:(ESTNearableZone)zone)
+RCT_EXPORT_METHOD(simulateZoneForNearable:(NSString *)identifier zone:(NSInteger)zone)
 {
 #if TARGET_IPHONE_SIMULATOR
     RCTLogInfo(@"simulateZoneForNearable %@ %@", identifier, [self nameForNearableZone:zone]);
-    [self.nearableManager simulateZone:zone forNearable:identifier];
+    [self.nearableManager simulateZone:(ESTNearableZone)zone forNearable:identifier];
 #endif
 }
 
@@ -93,16 +93,16 @@ RCT_EXPORT_METHOD(stopMonitoringForIdentifier:(NSString *)identifier)
     [self.nearableManager stopMonitoringForIdentifier:identifier];
 }
 
-RCT_EXPORT_METHOD(startMonitoringForType:(ESTNearableType)type)
+RCT_EXPORT_METHOD(startMonitoringForType:(NSInteger)type)
 {
-    RCTLogInfo(@"startMonitoringForType %@", [self nameForNearableType:type]);
-    [self.nearableManager startMonitoringForType:type];
+    RCTLogInfo(@"startMonitoringForType %@", [self nameForNearableType:(ESTNearableType)type]);
+    [self.nearableManager startMonitoringForType:(ESTNearableType)type];
 }
 
-RCT_EXPORT_METHOD(stopMonitoringForType:(ESTNearableType)type)
+RCT_EXPORT_METHOD(stopMonitoringForType:(NSInteger)type)
 {
-    RCTLogInfo(@"stopMonitoringForType %@", [self nameForNearableType:type]);
-    [self.nearableManager stopMonitoringForType:type];
+    RCTLogInfo(@"stopMonitoringForType %@", [self nameForNearableType:(ESTNearableType)type]);
+    [self.nearableManager stopMonitoringForType:(ESTNearableType)type];
 }
 
 RCT_EXPORT_METHOD(stopMonitoring)
@@ -125,16 +125,16 @@ RCT_EXPORT_METHOD(stopRangingForIdentifier:(NSString *)identifier)
     [self.nearableManager stopRangingForIdentifier:identifier];
 }
 
-RCT_EXPORT_METHOD(startRangingForType:(ESTNearableType)type)
+RCT_EXPORT_METHOD(startRangingForType:(NSInteger)type)
 {
-    RCTLogInfo(@"startRangingForType %@", [self nameForNearableType:type]);
-    [self.nearableManager startRangingForType:type];
+    RCTLogInfo(@"startRangingForType %@", [self nameForNearableType:(ESTNearableType)type]);
+    [self.nearableManager startRangingForType:(ESTNearableType)type];
 }
 
-RCT_EXPORT_METHOD(stopRangingForType:(ESTNearableType)type)
+RCT_EXPORT_METHOD(stopRangingForType:(NSInteger)type)
 {
-    RCTLogInfo(@"stopRangingForType %@", [self nameForNearableType:type]);
-    [self.nearableManager stopRangingForType:type];
+    RCTLogInfo(@"stopRangingForType %@", [self nameForNearableType:(ESTNearableType)type]);
+    [self.nearableManager stopRangingForType:(ESTNearableType)type];
 }
 
 RCT_EXPORT_METHOD(stopRanging)
