@@ -170,7 +170,7 @@ RCT_EXPORT_METHOD(stopRanging)
 {
     RCTLogInfo(@"didRangeNearable %@", nearable);
     NSDictionary *event = @{
-                            @"nearable": nearable
+                            @"nearable": [self dictionaryForNearable:nearable]
                             };
 
     [self.bridge.eventDispatcher sendDeviceEventWithName:@"didRangeNearable" body:event];
