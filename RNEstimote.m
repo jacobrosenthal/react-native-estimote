@@ -326,4 +326,50 @@ RCT_EXPORT_METHOD(stopRanging)
     return @{ @"identifier" : nearable.identifier, @"type" : [self nameForNearableType:nearable.type], @"zone" : [self nameForNearableZone:nearable.zone], @"rssi": [NSNumber numberWithLong:nearable.rssi] };
 }
 
+- (NSDictionary *)constantsToExport
+{
+    return @{
+             @"ESTNearableTypeUnknown": [NSNumber numberWithInt:ESTNearableTypeUnknown],
+             @"ESTNearableTypeDog": [NSNumber numberWithInt:ESTNearableTypeDog],
+             @"ESTNearableTypeCar": [NSNumber numberWithInt:ESTNearableTypeCar],
+             @"ESTNearableTypeFridge": [NSNumber numberWithInt:ESTNearableTypeFridge],
+             @"ESTNearableTypeBag": [NSNumber numberWithInt:ESTNearableTypeBag],
+             @"ESTNearableTypeBike": [NSNumber numberWithInt:ESTNearableTypeBike],
+             @"ESTNearableTypeChair": [NSNumber numberWithInt:ESTNearableTypeChair],
+             @"ESTNearableTypeBed": [NSNumber numberWithInt:ESTNearableTypeBed],
+             @"ESTNearableTypeDoor": [NSNumber numberWithInt:ESTNearableTypeDoor],
+             @"ESTNearableTypeShoe": [NSNumber numberWithInt:ESTNearableTypeShoe],
+             @"ESTNearableTypeGeneric": [NSNumber numberWithInt:ESTNearableTypeGeneric],
+             @"ESTNearableTypeAll": [NSNumber numberWithInt:ESTNearableTypeAll],
+
+             /**
+              *  Physical orientation of the device in 3D space.
+              */
+             // typedef NS_ENUM(NSInteger, ESTNearableOrientation)
+             @"ESTNearableOrientationUnknown": [NSNumber numberWithInt:ESTNearableOrientationUnknown],
+             @"ESTNearableOrientationHorizontal": [NSNumber numberWithInt:ESTNearableOrientationHorizontal],
+             @"ESTNearableOrientationHorizontalUpsideDown": [NSNumber numberWithInt:ESTNearableOrientationHorizontalUpsideDown],
+             @"ESTNearableOrientationVertical": [NSNumber numberWithInt:ESTNearableOrientationVertical],
+             @"ESTNearableOrientationVerticalUpsideDown": [NSNumber numberWithInt:ESTNearableOrientationVerticalUpsideDown],
+             @"ESTNearableOrientationLeftSide": [NSNumber numberWithInt:ESTNearableOrientationLeftSide],
+             @"ESTNearableOrientationRightSide": [NSNumber numberWithInt:ESTNearableOrientationRightSide],
+
+             /**
+              *  Proximity zone related to distance from the device.
+              */
+             // typedef NS_ENUM(NSInteger, ESTNearableZone)
+             @"ESTNearableZoneUnknown": [NSNumber numberWithInt:ESTNearableZoneUnknown],
+             @"ESTNearableZoneImmediate": [NSNumber numberWithInt:ESTNearableZoneImmediate],
+             @"ESTNearableZoneNear": [NSNumber numberWithInt:ESTNearableZoneNear],
+             @"ESTNearableZoneFar": [NSNumber numberWithInt:ESTNearableZoneFar],
+
+             /**
+              *  Type of firmware running on the device.
+              */
+             // typedef NS_ENUM(NSInteger, ESTNearableFirmwareState)
+             @"ESTNearableFirmwareStateBoot": [NSNumber numberWithInt:ESTNearableFirmwareStateBoot],
+             @"ESTNearableFirmwareStateApp": [NSNumber numberWithInt:ESTNearableFirmwareStateApp]
+             };
+}
+
 @end

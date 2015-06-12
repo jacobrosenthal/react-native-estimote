@@ -6,6 +6,4 @@
 
 var NativeRNEstimote = require('NativeModules').RNEstimote;
 
-NativeRNEstimote.DEFS = require('./ESTNearableDefinitions.js');
-
 module.exports = NativeRNEstimote;
