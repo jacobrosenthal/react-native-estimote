@@ -60,7 +60,7 @@ RCT_EXPORT_METHOD(simulateDidEnterRegionForNearable:(NSString *)identifier)
 #if TARGET_IPHONE_SIMULATOR
     RCTLogInfo(@"simulateDidEnterRegionForNearable %@", identifier);
     for (ESTNearable *nearable in self.nearableManager.nearables){
-        if(nearable.identifier == identifier){
+        if([nearable.identifier isEqualToString:identifier]){
             [self.nearableManager simulateDidEnterRegionForNearable:nearable];
         }
     }
@@ -72,7 +72,7 @@ RCT_EXPORT_METHOD(simulateDidExitRegionForNearable:(NSString *)identifier)
 #if TARGET_IPHONE_SIMULATOR
     RCTLogInfo(@"simulateDidExitRegionForNearable %@", identifier);
     for (ESTNearable *nearable in self.nearableManager.nearables){
-        if(nearable.identifier == identifier){
+        if([nearable.identifier isEqualToString:identifier]){
             [self.nearableManager simulateDidExitRegionForNearable:nearable];
         }
     }
