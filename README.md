@@ -27,7 +27,7 @@ var DeviceEventEmitter = React.DeviceEventEmitter;
 
 ```
 
-Utilize one of the Estimote APIs. Note all the constants are exported on the object like `Estimote.ESTNearableTypeAll`:
+Utilize one of the Estimote APIs. All the constants are exported on the object like `Estimote.ESTNearableTypeAll`. Note, the Estimote nearable Identifier is seperate from the UUID.
 ```
 Estimote.startMonitoringForIdentifier("4ba718229b92a8b3");
 
@@ -58,3 +58,6 @@ Which will print
 
 ```
 
+BACKGROUNDING
+-------------
+If you add the uses bluetooth le accessories capability your delegates will be called while your app is in the background, but not when killed or on the lock screen. It turns out that Estimote doesnt use ibeacon apis under the hood and is thus ineligible for that :( To get that behavior you may utilize [react-native-ibeacon](https://github.com/geniuxconsulting/react-native-ibeacon) in tandem to startMonitoringForRegion of the uuid (as opposed top the nearable id)
